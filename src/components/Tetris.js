@@ -14,6 +14,7 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+import Details from './details/Details';
 
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
@@ -123,6 +124,7 @@ const Tetris = () => {
       onKeyUp={keyUp}
     >
       <StyledTetris>
+        <Details/>
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
