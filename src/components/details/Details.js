@@ -5,7 +5,7 @@ function Details() {
   return (
     <div className='details--container'>
       <div className='title'> TETRIS</div>
-      <p> Directions</p>
+      <p> How to Play</p>
       <ul className='directions'>
         <li> Left and right arrows to move side to side.</li>
         <li> Up arrow to rotate tetromino.</li>
