@@ -51,7 +51,6 @@ export const usePlayer = () => {
       tetromino: randomTetromino().shape,
       collided: false,
     });
-    // eslint-disable-next-line
   }, []);
 
   return [player, updatePlayerPos, resetPlayer, playerRotate];
