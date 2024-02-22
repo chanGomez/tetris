@@ -2,9 +2,9 @@ import React from 'react'
 import "./Details.css"
 
 function Details() {
-  return (
-    <div className='details--container'>
-      <div className='title'> TETRIS</div>
+  return (<div>
+    <div className='title'> TETRIS</div>
+    {/* <div className='details--container'>
       <p> How to Play</p>
       <ul className='directions'>
         <li> Left and right arrows to move side to side.</li>
@@ -12,6 +12,7 @@ function Details() {
         <li> Down arrow to move down faster.</li>
         <li> Spacebar to restart the game.</li>
       </ul>
+    </div> */}
     </div>
   )
 }

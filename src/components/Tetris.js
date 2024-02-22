@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
+import "98.css";
 
 // Custom Hooks
 import { useInterval } from '../hooks/useInterval';
@@ -123,10 +124,19 @@ const Tetris = () => {
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
+      <div style={{ width: 650, height: 720, margin: '15px 0 0 220px'  }} className="window">
+      <div className="title-bar">
+        <div className="title-bar-text">TETRIS</div>
+        <div className="title-bar-controls">
+          <button aria-label="Minimize" />
+          <button aria-label="Maximize" />
+          <button aria-label="Close" />
+        </div>
+      </div>
       <StyledTetris>
-        <Details/>
-        <Stage stage={stage} />
+
         <aside>
+        <Details/>
           {gameOver ? (
             <Display gameOver={gameOver} text="Game Over" />
           ) : (
@@ -138,7 +148,9 @@ const Tetris = () => {
           )}
           <StartButton callback={startGame} />
         </aside>
+        <Stage stage={stage} />
       </StyledTetris>
+      </div>
     </StyledTetrisWrapper>
   );
 };

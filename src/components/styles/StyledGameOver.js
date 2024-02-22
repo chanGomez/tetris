@@ -4,7 +4,7 @@ export const StyledGameOver = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  // border-radius: 20px;
   color: #999;
   background: #000;
   position: absolute;
@@ -13,6 +13,6 @@ export const StyledGameOver = styled.div`
   width: 150px;
   height: 100px;
   z-index: 1000;
-  border: 4px solid #333;
+  border: 2px solid #00E719;
   font-family: Pixel, Arial, Helvetica, sans-serif;
 `;
