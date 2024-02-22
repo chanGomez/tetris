@@ -124,7 +124,7 @@ const Tetris = () => {
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
-      <div style={{ width: 650, height: 720, margin: '15px 0 0 220px'  }} className="window">
+      <div style={{ maxWidth: 900, margin: '15px 0 0 220px'  }} className="window">
       <div className="title-bar">
         <div className="title-bar-text">TETRIS</div>
         <div className="title-bar-controls">

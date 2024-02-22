@@ -16,7 +16,7 @@ justify-content: space-evenly;
 align-item: flex-start;
 padding: 40px;
 margin: 0 auto;
-max-width: 1200px;
+max-width: 900px;
 gap: 30px;
 background-color: black;
 
