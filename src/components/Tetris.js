@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-
+import folderImg from "../img/folderImg.png"
+import folderOpenedImg from "../img/folderOpenedImg.png"
+import gameIcon from "../img/game-icon.png"
+import MicrosoftWindow from './micorsoftWindow/Microsoft';
 
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
@@ -20,6 +23,9 @@ import Details from './details/Details';
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
+  const [openedTab, setOpenedTab] =  useState(true)
+  const [tab, setTab] =  useState(true)
+  
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
@@ -116,6 +122,9 @@ const Tetris = () => {
  
 //     updatePlayerPos({ x: 0, y: pot-1, collided: true });
 //  }
+function closeTab(){
+  
+}
 
   return (
     <StyledTetrisWrapper
@@ -124,17 +133,16 @@ const Tetris = () => {
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
-      <div style={{ maxWidth: 900, margin: '15px 0 0 220px'  }} className="window">
+      <div style={ tab ? { width: 900} : {display: "none" }} className="tetris-window window">
       <div className="title-bar">
         <div className="title-bar-text">TETRIS</div>
         <div className="title-bar-controls">
-          <button aria-label="Minimize" />
+          <button aria-label="Minimize" onClick={()=> (setOpenedTab(!openedTab))}/>
           <button aria-label="Maximize" />
-          <button aria-label="Close" />
+          <button aria-label="Close" onClick={()=> (setTab(!tab))}/>
         </div>
       </div>
-      <StyledTetris>
-
+      <StyledTetris style={ openedTab ? { display: ""} : {display: "none"} }  >
         <aside>
         <Details/>
           {gameOver ? (
@@ -151,6 +159,17 @@ const Tetris = () => {
         <Stage stage={stage} />
       </StyledTetris>
       </div>
+      <div className='icons'>
+        <div className='folder'>
+        <img src={folderImg} id='folder-bio' />
+        <p> "CREATOR"</p>
+      </div>
+      <div className='game'>
+      <img src={gameIcon} id='game-icon' onClick={() => (setTab(true), setOpenedTab(true))}/>
+      <p> TETRIS</p>
+      </div>
+      </div>
+      <MicrosoftWindow/>
     </StyledTetrisWrapper>
   );
 };
