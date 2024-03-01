@@ -45,7 +45,7 @@ const Tetris = () => {
     rowsCleared
   );
 
-  useDragger("tetrisTab")
+  useDragger("tetrisTabWindow")
 
   // console.log('re-render');
 
@@ -137,6 +137,8 @@ const Tetris = () => {
 //     updatePlayerPos({ x: 0, y: pot-1, collided: true });
 //  }
 
+console.log(activeWindow, tetrisTab)
+
   return (
     <StyledTetrisWrapper
       role="button"
@@ -145,10 +147,10 @@ const Tetris = () => {
       onKeyUp={keyUp}
     >
       <div 
-      id='tetrisTab'
+      id='tetrisTabWindow'
       style={ ( 
-        tetrisTab ? { } : { display: "none" }
-      // activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} 
+       tetrisTab ? { } : { display: "none" }
+      ,activeWindow === `tetris`? { zIndex: 5} : { zIndex: 1} 
       )} 
       className="tetris-window window"
       onClick={()=> (setActiveWindow(`tetris`))}>
@@ -157,25 +159,26 @@ const Tetris = () => {
         <div className="title-bar-controls">
           <button aria-label="Minimize" onClick={()=> (setTetrisMinTab(!tetrisMinTab))}/>
           <button aria-label="Maximize" />
-          <button aria-label="Close" onClick={()=> (setTetrisTab(!tetrisTab))}/>
+          <button aria-label="Close" onClick={()=> (setTetrisTab(!tetrisTab)) }/>
         </div>
       </div>
-      <StyledTetris style={tetrisMinTab ? { display: ""} : {display: "none"}}>
-        <aside>
-        <Details/>
-          {gameOver ? (
-            <Display gameOver={gameOver} text="Game Over" />
-          ) : (
-            <div>
-              <Display text={`Score: ${score}`} />
-              <Display text={`Rows: ${rows}`} />
-              <Display text={`Level: ${level}`} />
-            </div>
-          )}
-          <StartButton callback={startGame} />
-        </aside>
-        <Stage stage={stage} />
-      </StyledTetris>
+      {tetrisMinTab ?
+            <StyledTetris style={tetrisMinTab ? { } : {display: "none"}}>
+            <aside>
+            <Details/>
+              {gameOver ? (
+                <Display gameOver={gameOver} text="Game Over" />
+              ) : (
+                <div>
+                  <Display text={`Score: ${score}`} />
+                  <Display text={`Rows: ${rows}`} />
+                  <Display text={`Level: ${level}`} />
+                </div>
+              )}
+              <StartButton callback={startGame} />
+            </aside>
+            <Stage stage={stage} />
+          </StyledTetris> : ""}
       </div>
       <div className='icons'>
       <div className='folder'>

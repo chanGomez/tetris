@@ -56,7 +56,7 @@ export const StyledTetrisWrapper = styled.div`
   position : absolute;
   left: 15rem;;
   top: 1rem;
-  z-index: 10; 
+  // z-index: 10; 
   width: 700px
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 function useDragger(id) {
+    console.log(id)
     const isClicked = useRef(false);
     
     const coords = useRef({
