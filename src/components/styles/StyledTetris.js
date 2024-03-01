@@ -12,9 +12,8 @@ export const StyledTetrisWrapper = styled.div`
 .icons{
     width: auto;
     position : fixed;
-    right: 50px;
+    right: 10px;
     top: 30px;
-    // margin-top: -500px;
     display: flex;
     flex-direction: column;
     z-index: 0; 
@@ -26,6 +25,7 @@ export const StyledTetrisWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   color: white;
+  margin: 0 auto;
 }
 
 .icons p{
@@ -35,39 +35,57 @@ export const StyledTetrisWrapper = styled.div`
 }
 
 #folder-bio{
-  width: 3rem;
+  width: 3.5rem;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#game-icon{
+  width: 8rem;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.game p {
+  margin: -20px;
+  color: white;
+}
+
+
+.tetris-window{
+  position : absolute;
+  left: 15rem;;
+  top: 1rem;
+  z-index: 10; 
+}
+
+#windows-98{
+  width: 4rem;
   align-items: center;
   color: white;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: auto 0;
-  padding: 10px;
+  padding-top: 16px;
   cursor: pointer;
 }
 
-#game-icon{
-  width: 6rem;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-p{
-
-}
-
-.game p {
-  margin: -15px;
+.windows-98-icon{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
 }
 
 
-.tetris-window{
-  // width: 900px;
-  position : absolute;
-  left: 15rem;;
-  top: 1rem;
-  z-index: 10; 
+a{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 `;
 
@@ -83,6 +101,9 @@ background-color: black;
 background: repeating-conic-gradient(
     rgba(195, 195, 197, 0.1) 0%,
     rgb(7, 7, 7) 0%,
+    // rgb(0, 0, 255) 0%,
+    // rgb(155, 30, 0),
+    // rgb(60, 179, 113),
     rgba(195, 195, 197, 0.3) 20%
   ),
   radial-gradient(rgba(7, 112, 94, 0.3), rgba(61, 26, 189, 0.3)),
@@ -93,8 +114,7 @@ background: repeating-conic-gradient(
     rgb(10, 10, 10) 30%,
     rgba(84, 84, 88, 0.562) 0%
   );
-background-size: 20px 20px;
-
+background-size: 2rem 2rem;
 
 aside{
     width: 100%;

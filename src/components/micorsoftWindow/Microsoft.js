@@ -3,24 +3,29 @@ import "98.css"
 import micrsoft from "../../img/micrsoft.png"
 import "./microsoftWindow.css"
 
-function MicrosoftWindow() {
-    const [openedTab, setOpenedTab] =  useState(true)
-    const [tab, setTab] =  useState(true)
-
+function MicrosoftWindow({windowsTab, setWindowsTab, setWindowsMinTab, windowsMinTab, activeWindow, setActiveWindow}) {
+  
   return (
-    <div style={ tab ? { width: 450} : {display: "none" }}  className=" microsoft-window window">
-    <div className="title-bar">
-    <div className="title-bar-text">TETRIS</div>
-    <div className="title-bar-controls">
-      <button aria-label="Minimize" onClick={()=> (setOpenedTab(!openedTab))}/>
-      <button aria-label="Maximize" />
-      <button aria-label="Close" onClick={()=> (setTab(!tab))}/>
+    <>
+    {windowsTab ? 
+      <div style={ (windowsTab ? { width: 450} : {display: "none" }, 
+      activeWindow === "windows98" ? { zIndex: 100} : { zIndex: 1})} 
+       className=" microsoft-window window"
+       onClick={()=> (setActiveWindow("windows98"))}>
+      <div className="title-bar">
+      <div className="title-bar-text">TETRIS</div>
+      <div className="title-bar-controls">
+        <button aria-label="Minimize" onClick={()=> (setWindowsMinTab(!windowsMinTab))}/>
+        <button aria-label="Maximize" />
+        <button aria-label="Close" onClick={()=> (setWindowsTab(!windowsTab))}/>
+      </div>
     </div>
-  </div>
-  <div style={ openedTab ? { display: ""} : {display: "none"} } className='windows-img-container'> 
-  <img src={micrsoft} id='microsoft' />
-  </div>
-  </div>
+    <div style={ windowsMinTab ? { display: ""} : {display: "none"} } className='windows-img-container'> 
+    <img src={micrsoft} id='microsoft' />
+    </div>
+    </div> :
+  ""}</>
+    
   )
 }
 

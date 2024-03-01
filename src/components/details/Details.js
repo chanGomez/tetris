@@ -3,8 +3,8 @@ import "./Details.css"
 
 function Details() {
   return (<div>
-    <div className='title'> TETRIS</div>
     <div className='details--container'>
+    <div className='title'> TETRIS</div>
       <p id='howtoplay'> How to Play</p>
       <div className='directions'>
         <p> • <span>Left and right arrows</span> to move side to side.</p>

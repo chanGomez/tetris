@@ -14,5 +14,5 @@ font-family:  Pixel, Arial, Helvetica, sans-serif;
 font-size: 1rem;
 outline: none;
 cursor: pointer;
-// border: solid 2px #00E719;
+// border: solid 4px #9d9d9d;
 `

@@ -13,6 +13,6 @@ export const StyledGameOver = styled.div`
   width: 150px;
   height: 100px;
   z-index: 1000;
-  border: 2px solid #00E719;
+  border: 4px solid #9d9d9d;
   font-family: Pixel, Arial, Helvetica, sans-serif;
 `;

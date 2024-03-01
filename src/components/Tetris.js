@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import folderImg from "../img/folderImg.png"
 import folderOpenedImg from "../img/folderOpenedImg.png"
 import gameIcon from "../img/game-icon.png"
 import MicrosoftWindow from './micorsoftWindow/Microsoft';
+import windows98Icon from "../img/windows-icon.png"
+
 
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
@@ -23,10 +26,18 @@ import Details from './details/Details';
 const Tetris = () => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
-  const [openedTab, setOpenedTab] =  useState(true)
-  const [tab, setTab] =  useState(true)
-  
 
+  //the window close button and icon change this state
+  const [windowsTab, setWindowsTab] =  useState(true)
+  const [tetrisTab, setTetrisTab] =  useState(true)
+
+  //the minamize botton changes this and the icon button
+  const [windowsMinTab, setWindowsMinTab] =  useState(true)
+  const [tetrisMinTab, setTetrisMinTab] =  useState(true)
+
+  //active window class
+  const [activeWindow, setActiveWindow] =  useState("tetris")
+  
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
@@ -122,10 +133,6 @@ const Tetris = () => {
  
 //     updatePlayerPos({ x: 0, y: pot-1, collided: true });
 //  }
-function closeTab(){
-  
-}
-
   return (
     <StyledTetrisWrapper
       role="button"
@@ -133,16 +140,19 @@ function closeTab(){
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
-      <div style={ tab ? { width: 900} : {display: "none" }} className="tetris-window window">
+      {tetrisTab ?       <div style={ (
+      activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} )} 
+      className="tetris-window window"
+      onClick={()=> (setActiveWindow(`tetris`))}>
       <div className="title-bar">
         <div className="title-bar-text">TETRIS</div>
         <div className="title-bar-controls">
-          <button aria-label="Minimize" onClick={()=> (setOpenedTab(!openedTab))}/>
+          <button aria-label="Minimize" onClick={()=> (setTetrisMinTab(!tetrisMinTab))}/>
           <button aria-label="Maximize" />
-          <button aria-label="Close" onClick={()=> (setTab(!tab))}/>
+          <button aria-label="Close" onClick={()=> (setTetrisTab(!tetrisTab))}/>
         </div>
       </div>
-      <StyledTetris style={ openedTab ? { display: ""} : {display: "none"} }  >
+      <StyledTetris style={tetrisMinTab ? { display: ""} : {display: "none"}}>
         <aside>
         <Details/>
           {gameOver ? (
@@ -158,18 +168,27 @@ function closeTab(){
         </aside>
         <Stage stage={stage} />
       </StyledTetris>
-      </div>
+      </div> : ""}
       <div className='icons'>
-        <div className='folder'>
-        <img src={folderImg} id='folder-bio' />
+      <div className='folder'>
+      <Link to={`https://chantal-gomez.netlify.app/`} target="_blank">
+        <img src={folderImg} id='folder-bio'  />
         <p> "CREATOR"</p>
+      </Link>
       </div>
+
       <div className='game'>
-      <img src={gameIcon} id='game-icon' onClick={() => (setTab(true), setOpenedTab(true))}/>
-      <p> TETRIS</p>
+      <img src={gameIcon} id='game-icon' onClick={() => (setTetrisTab(true), setTetrisMinTab(true))}/>
+      <p> Tetris</p>
       </div>
+      <div className='windows-98-icon'> 
+  <img src={windows98Icon} id='windows-98' onClick={() => (setWindowsTab(true), setWindowsMinTab(true))} />
+    <p> Windows 98</p>
+  </div>
       </div>
-      <MicrosoftWindow/>
+      <MicrosoftWindow setWindowsTab={setWindowsTab} windowsTab={windowsTab} 
+      windowsMinTab={windowsMinTab} setWindowsMinTab={setWindowsMinTab}
+      activeWindow={activeWindow} setActiveWindow={setActiveWindow}/>
     </StyledTetrisWrapper>
   );
 };
