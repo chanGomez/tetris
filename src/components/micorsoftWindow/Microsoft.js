@@ -12,7 +12,7 @@ function MicrosoftWindow({windowsTab, setWindowsTab, setWindowsMinTab, windowsMi
  <div 
       id='windowsTab'
       style={ (windowsTab ? { width: 450} : {display: "none" }
-      // ,activeWindow === "windows98" ? {  width: 450, zIndex: 100} : {  width: 450, zIndex: 1}
+      ,activeWindow === "windows98" ? {  width: 450, zIndex: 100} : {  width: 450, zIndex: 1}
       )} 
        className=" microsoft-window window"
        onClick={()=> (setActiveWindow("windows98"))}>

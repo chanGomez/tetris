@@ -148,7 +148,7 @@ const Tetris = () => {
       id='tetrisTab'
       style={ ( 
         tetrisTab ? { } : { display: "none" }
-      // activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} 
+      // ,activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} 
       )} 
       className="tetris-window window"
       onClick={()=> (setActiveWindow(`tetris`))}>
