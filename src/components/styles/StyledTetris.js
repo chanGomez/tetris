@@ -57,6 +57,7 @@ export const StyledTetrisWrapper = styled.div`
   left: 15rem;;
   top: 1rem;
   z-index: 10; 
+  width: 700px
 }
 
 #windows-98{

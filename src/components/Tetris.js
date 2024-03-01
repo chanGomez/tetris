@@ -5,6 +5,7 @@ import folderOpenedImg from "../img/folderOpenedImg.png"
 import gameIcon from "../img/game-icon.png"
 import MicrosoftWindow from './micorsoftWindow/Microsoft';
 import windows98Icon from "../img/windows-icon.png"
+import useDragger from '../hooks/useDragger';
 
 
 import { createStage, checkCollision } from '../gameHelpers';
@@ -43,6 +44,8 @@ const Tetris = () => {
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
     rowsCleared
   );
+
+  useDragger("tetrisTab")
 
   // console.log('re-render');
 
@@ -133,6 +136,7 @@ const Tetris = () => {
  
 //     updatePlayerPos({ x: 0, y: pot-1, collided: true });
 //  }
+
   return (
     <StyledTetrisWrapper
       role="button"
@@ -140,8 +144,12 @@ const Tetris = () => {
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
-      {tetrisTab ?       <div style={ (
-      activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} )} 
+      <div 
+      id='tetrisTab'
+      style={ ( 
+        tetrisTab ? { } : { display: "none" }
+      // activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} 
+      )} 
       className="tetris-window window"
       onClick={()=> (setActiveWindow(`tetris`))}>
       <div className="title-bar">
@@ -168,7 +176,7 @@ const Tetris = () => {
         </aside>
         <Stage stage={stage} />
       </StyledTetris>
-      </div> : ""}
+      </div>
       <div className='icons'>
       <div className='folder'>
       <Link to={`https://chantal-gomez.netlify.app/`} target="_blank">
