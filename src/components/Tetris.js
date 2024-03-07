@@ -24,7 +24,7 @@ import Display from './Display';
 import StartButton from './StartButton';
 import Details from './details/Details';
 
-const Tetris = () => {
+const Tetris = ({setGame}) => {
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
@@ -64,6 +64,7 @@ const Tetris = () => {
     setLevel(0);
     setRows(0);
     setGameOver(false);
+    setGame(true)
   };
 
   const drop = () => {
@@ -80,6 +81,7 @@ const Tetris = () => {
       // Game over!
       if (player.pos.y < 1) {
         console.log('GAME OVER!!!');
+        setGame(false)
         setGameOver(true);
         setDropTime(null);
       }
@@ -150,7 +152,8 @@ const Tetris = () => {
         tetrisTab ? { } : { display: "none" }
       // ,activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} 
       )} 
-      className="tetris-window window"
+      // className=tetris-window window
+      className={ activeWindow === `tetris` ? "tetris-window window active" : "tetris-window window"}
       onClick={()=> (setActiveWindow(`tetris`))}>
       <div className="title-bar">
         <div className="title-bar-text">TETRIS</div>

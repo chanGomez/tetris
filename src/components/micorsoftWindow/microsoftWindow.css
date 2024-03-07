@@ -8,3 +8,8 @@
     top: 10rem;
     z-index: 3; 
 }
+
+.active{
+    width: 400px;
+    z-index: 100;
+}

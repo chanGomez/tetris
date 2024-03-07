@@ -53,7 +53,7 @@ export const StyledTetrisWrapper = styled.div`
 
 
 .tetris-window{
-  position : absolute;
+  position : relative;
   left: 15rem;;
   top: 1rem;
   z-index: 10; 
@@ -87,6 +87,11 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+active{
+  width: 400px;
+  z-index: 100;
 }
 `;
 
