@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function useDragger(id) {
     const isClicked = useRef(false);
+    // const[currentRight, setCurrentRight] = useState(20)
+    // const[currentLeft, setCurrentLeft] = useState(20)
     
     const coords = useRef({
       startX: 0,
@@ -9,6 +11,7 @@ function useDragger(id) {
       lastX: 0,
       lastY: 0
     });
+
   
     useEffect(() => {
       const target = document.getElementById(id);

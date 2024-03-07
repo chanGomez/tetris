@@ -20,7 +20,7 @@ function App() {
   }
 
   const updateExpireTime = () => {
-    const newExpireTime = Date.now() + 10000
+    const newExpireTime = Date.now() + 60000
     localStorage.setItem("expireTime", newExpireTime)
     setUserActivty(true)
 
@@ -32,7 +32,7 @@ function App() {
     //check for inactivity after 8 seconds
     const interval = setInterval(()=> {
       checkInactivity();
-    }, 8000)
+    }, 3000)
 
     return () => clearInterval(interval)
   }, [])
@@ -56,7 +56,7 @@ function App() {
       window.removeEventListener("scroll", updateExpireTime)
       window.removeEventListener("mousemove", updateExpireTime)
     }
-  }, [])
+  }, [game])
 
   return(
     <BrowserRouter>
