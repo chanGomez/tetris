@@ -150,7 +150,7 @@ const Tetris = ({setGame}) => {
       id='tetrisTab'
       style={ ( 
         tetrisTab ? { } : { display: "none" }
-      // ,activeWindow === `tetris`? { width: 700, zIndex: 100} : {width: 700, zIndex: 1} 
+      // ,activeWindow === `tetris`? { width: 3, zIndex: 100} : {width: 700, zIndex: 1} 
       )} 
       // className=tetris-window window
       className={ activeWindow === `tetris` ? "tetris-window window active" : "tetris-window window"}
