@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import folderImg from "../img/folderImg.png"
-import folderOpenedImg from "../img/folderOpenedImg.png"
 import gameIcon from "../img/game-icon.png"
 import MicrosoftWindow from './micorsoftWindow/Microsoft';
 import windows98Icon from "../img/windows-icon.png"
-import useDragger from '../hooks/useDragger';
-
-
+import Draggable from 'react-draggable';
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetris } from './styles/StyledTetris';
 import "98.css";
@@ -44,10 +41,6 @@ const Tetris = ({setGame}) => {
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
     rowsCleared
   );
-
-  useDragger("tetrisTab")
-
-  // console.log('re-render');
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -122,7 +115,6 @@ const Tetris = ({setGame}) => {
   };
 
     // This one starts the game
-  // Custom hook by Dan Abramov
   useInterval(() => {
     drop();
   }, dropTime);
@@ -135,7 +127,6 @@ const Tetris = ({setGame}) => {
 //        setDropTime(5);
 //        pot += 1;
 //     }
- 
 //     updatePlayerPos({ x: 0, y: pot-1, collided: true });
 //  }
 
@@ -146,6 +137,7 @@ const Tetris = ({setGame}) => {
       onKeyDown={e => move(e)}
       onKeyUp={keyUp}
     >
+      <Draggable>
       <div 
       id='tetrisTab'
       style={ ( 
@@ -180,6 +172,7 @@ const Tetris = ({setGame}) => {
         <Stage stage={stage} />
       </StyledTetris>
       </div>
+      </Draggable>
       <div className='icons'>
       <div className='folder'>
       <Link to={`https://chantal-gomez.netlify.app/`} target="_blank">

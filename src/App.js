@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom'
 import Tetris from './components/Tetris';
 import screenSaver from "./img/screen-saver.mp4"
-import movingImage from "./img/moving-image.mp4"
 import "./App.css"
 
 

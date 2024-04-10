@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## 👾 TETRIS 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to React Tetris! This project is a recreation of the classic Tetris game built using React and JavaScript.
 
-## Available Scripts
+## Try it yourself
 
-In the project directory, you can run:
+You can play the game live [here](https://tttetris.netlify.app/).
 
-### `npm start`
+## 🕹️ How to play it
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Once you press start you will need to 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - "Up" button for changing the position of the tetromino.
+  - "Down" button for moving down faster.
+  - "Left" and right" buttons for navigation the tetromino.
 
-### `npm test`
+- You can always see your score and the rows you have wipped out.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Once you make it to the top of your game you lose and game will stop.
 
-### `npm run build`
+- The more you play the more levels you'll pass which also means the faster the game gets.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- I bet you can't get passed level 4 🤷🏼‍♀️.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚡ Technologies
 
-### `npm run eject`
+- `React.js`
+- `Javascript`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 💭 Process:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+One of my interests as being a gamer and having the abilty to code is to create games. This is a small step towards learning game development. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I started by focusing on the game's functionality. I cared more that it worked correctly. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The logic for creating a game is way different from web development but I tried to make as mean connections as I could to be able to understand very line of code.
 
-## Learn More
+After game was completed I had the struggles of how to showcase my work. I wanted to be able to keep the user longer on my site. And for that since I made a 
+retro game I though maybe I should place it where I first played it, on a windows 98 home screen. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ How can it be improved?
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I would like to save the users highscore for users to be able to keep track of their progress. Create a game over display to show off the highscore.
 
-### Code Splitting
+## 🎥 Demo/Preview
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🚦 Running the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To run the project in your local environment, follow these steps:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Clone the repository to your local machine
+2. Run `npm install` or `yarn` in the project directory to install the required dependencies
+3. Run `npm run start` or `yarn run start` to get the project started.
+4. Open http://localhost:3000 (or the address shown in your console) in your web browser to see the app.

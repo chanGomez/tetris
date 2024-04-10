@@ -2,19 +2,17 @@ import React, { useState } from 'react';
 import "98.css"
 import micrsoft from "../../img/micrsoft.png"
 import "./microsoftWindow.css"
-import useDragger from '../../hooks/useDragger';
+import Draggable from 'react-draggable';
+
 
 function MicrosoftWindow({windowsTab, setWindowsTab, setWindowsMinTab, windowsMinTab, activeWindow, setActiveWindow}) {
-
-  useDragger("windowsTab")
   
   return (
- <div 
+    <Draggable>
+    <div 
       id='windowsTab'
       style={ (windowsTab ? { width: 450} : {display: "none" }
-      // ,activeWindow === "windows98" ? {  width: 450, zIndex: 100} : {  width: 450, zIndex: 1}
       )} 
-      //  className=" microsoft-window window"
        className={activeWindow === "windows98" ? "microsoft-window window active" : "microsoft-window window" }
        onClick={()=> (setActiveWindow("windows98"))}>
       <div className="title-bar">
@@ -24,11 +22,12 @@ function MicrosoftWindow({windowsTab, setWindowsTab, setWindowsMinTab, windowsMi
         <button aria-label="Maximize" />
         <button aria-label="Close" onClick={()=> (setWindowsTab(!windowsTab))}/>
       </div>
-    </div>
+      </div>
     <div style={ windowsMinTab ? { display: ""} : {display: "none"} } className='windows-img-container'> 
     <img src={micrsoft} id='microsoft' />
-    </div>
+      </div>
     </div>  
+    </Draggable>
   )
 }
 

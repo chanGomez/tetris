@@ -38,9 +38,6 @@ export const useStage = (player, resetPlayer) => {
           }
         });
       });
-
-      // console.log(player);
-
       // Then check if we got some score if collided
       if (player.collided) {
         resetPlayer();
