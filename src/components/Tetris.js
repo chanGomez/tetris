@@ -175,7 +175,7 @@ const Tetris = ({setGame}) => {
       </Draggable>
       <div className='icons'>
       <div className='folder'>
-      <Link to={`https://chantal-gomez.netlify.app/`} target="_blank">
+      <Link to={`https://chantalgomez.netlify.app/`} target="_blank">
         <img src={folderImg} id='folder-bio'  />
         <p> "CREATOR"</p>
       </Link>

@@ -10,7 +10,7 @@ function Details() {
         <p> • <span>Left and right arrows</span> to move side to side.</p>
         <p> • <span>Up arrow</span> to rotate tetromino.</p>
         <p> • <span>Down arrow</span> to drop faster.</p>
-        <p> • <span>Spacebar</span> to restart the game.</p>
+        {/* <p> • <span>Spacebar</span> to restart the game.</p> */}
       </div>
     </div>
     </div>
