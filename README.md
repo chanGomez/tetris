@@ -7,6 +7,9 @@ Welcome to React Tetris! This project is a recreation of the classic Tetris game
 
 You can play the game live [here](https://tttetris.netlify.app/).
 
+## 🎥 Demo/Preview
+https://github.com/chanGomez/tetris/assets/122551595/cdbc6095-4897-4e7e-83a4-fadbce5628ff
+
 ## 🕹️ How to play it
 
 - Once you press start you will need to 
@@ -43,9 +46,6 @@ retro game I though maybe I should place it where I first played it, on a window
 ## 🛠️ How can it be improved?
 
 I would like to save the users highscore for users to be able to keep track of their progress. Create a game over display to show off the highscore.
-
-## 🎥 Demo/Preview
-https://github.com/chanGomez/tetris/assets/122551595/cdbc6095-4897-4e7e-83a4-fadbce5628ff
 
 ## 🚦 Running the Project
 
